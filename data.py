@@ -59,6 +59,9 @@ def get_countries_by_name(country_name):
             }
         },
         {
+            "$limit":1
+        },
+        {
             "$project": {
                 "_id":0,
             }
