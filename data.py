@@ -10,10 +10,6 @@ load_dotenv()
 # Access environment variables
 mongodb_uri = os.getenv("MONGODB_URI")
 
-# Using the MongoDB connection string
-from pymongo import MongoClient
-
-
 # Connect to MongoDB
 client = MongoClient(mongodb_uri)
 db = client["africa_db"]
@@ -54,8 +50,8 @@ def get_countries_by_name(country_name):
               }
         ]
 
-# Run the aggregation pipeline
+        # Run the aggregation pipeline
         result = list(countries_collection.aggregate(pipeline))
 
-#Return the first matching result or None if no match found
+        #Return the first matching result or None if no match found
         return result[0] if result else None

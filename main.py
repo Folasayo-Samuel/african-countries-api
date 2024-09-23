@@ -1,8 +1,17 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from data import get_random_countries, get_countries_by_name
 
 # Create a FastAPI instance
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Update this for production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Define the route that returns random African countries
 @app.get("/countries", response_model=list)
