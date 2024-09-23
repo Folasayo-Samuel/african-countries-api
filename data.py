@@ -29,6 +29,48 @@ def get_random_countries(n=10):
     return random.sample(countries, k=min(n, len(countries)))
 
 def get_countries_by_name(country_name):
+
+    """Fetch a specific country by name using MongoDB Atlas Search."""
+
+    # Use MongoDB Atlas Search with the 'search' aggregation pipeline
+    pipeline = [
+        {
+            "$search": {
+                "index": "default", # Use the default search index or a custom one if created
+                "text":{
+                    "query": country_name,
+                    "path": "name", # The field to search (e.g., 'name')
+                    "fuzzy":{
+                        "maxEdits": 1 # Allows up to 1 character to be wrong (for fuzziness)
+                    }
+                }
+            }
+        },
+        {
+            "$limit":1
+        },
+        {
+            "$project": {
+                "_id":0,
+            }
+        }
+    ]
+
+# Run the aggregation pipeline
+    result = list(countries_collection.aggregate(pipeline))
+
+
+# Return the first matching result or None if no match found
+    return result[0] if result else None
+
+
+
+# def get_countries_by_name(country_name):
+#         """Fetch a specific country by name from MongoDB"""
+#         country = countries_collection.find_one({"name":{"$regex": f"^{country_name}$", "$options":"i"}}, {"_id":0})
+#         return country
+
+
         """Fetch a specific country by name from MongoDB"""
         #Use MongoDB Atlas Search with the 'search' aggregation pipeline
         pipeline = [
@@ -59,3 +101,4 @@ def get_countries_by_name(country_name):
 
 #Return the first matching result or None if no match found
         return result[0] if result else None
+
