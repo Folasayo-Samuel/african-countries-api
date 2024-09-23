@@ -1,0 +1,20 @@
+2024-09-23 10:46:23.635 | INFO     | main:log_requests:25 - Request: GET /docs
+2024-09-23 10:46:23.642 | INFO     | main:log_requests:27 - Response status: 200
+2024-09-23 10:46:24.953 | INFO     | main:log_requests:25 - Request: GET /openapi.json
+2024-09-23 10:46:24.966 | INFO     | main:log_requests:27 - Response status: 200
+2024-09-23 10:46:37.282 | INFO     | main:log_requests:25 - Request: GET /countries
+2024-09-23 10:46:37.299 | INFO     | main:read_countries:37 - Fetching random countries...
+2024-09-23 10:46:38.158 | INFO     | main:read_countries:42 - Countries found: [{'name': 'Kenya', 'population': '53 million', 'capital': 'Nairobi'}, {'name': 'Ivory Coast', 'population': '26 million', 'capital': 'Yamoussoukro'}, {'name': 'Morocco', 'population': '36 million', 'capital': 'Rabat'}, {'name': 'Ghana', 'population': '80 million', 'capital': 'Accra'}, {'name': 'South Africa', 'population': '59 million', 'capital': 'Pretoria'}, {'name': 'Nigeria', 'population': '180 million', 'capital': 'Abuja'}, {'name': 'Egypt', 'population': '102 million', 'capital': 'Cairo'}, {'name': 'Senegal', 'population': '17 million', 'capital': 'Dakar'}, {'name': 'Ethiopia', 'population': '115 million', 'capital': 'Addis Ababa'}, {'name': 'Uganda', 'population': '45 million', 'capital': 'Kampala'}]
+2024-09-23 10:46:38.161 | INFO     | main:log_requests:27 - Response status: 200
+2024-09-23 10:46:50.700 | INFO     | main:log_requests:25 - Request: GET /metrics
+2024-09-23 11:02:57.360 | INFO     | main:log_requests:25 - Request: GET /countries/Nigeria
+2024-09-23 11:02:57.364 | INFO     | main:get_country:51 - Looking for country: Nigeria
+2024-09-23 11:02:58.534 | INFO     | main:get_country:54 - Country found: {'name': 'Nigeria', 'population': '180 million', 'capital': 'Abuja'}
+2024-09-23 11:02:58.539 | INFO     | main:log_requests:27 - Response status: 200
+2024-09-23 11:03:09.686 | INFO     | main:log_requests:25 - Request: GET /metrics
+2024-09-23 11:07:14.456 | INFO     | main:log_requests:25 - Request: GET /metrics
+2024-09-23 11:07:40.168 | INFO     | main:log_requests:25 - Request: GET /metrics
+2024-09-23 11:07:42.593 | INFO     | main:log_requests:25 - Request: GET /metrics
+2024-09-23 11:08:10.461 | INFO     | main:log_requests:25 - Request: GET /metrics
+2024-09-23 11:15:57.671 | INFO     | main:log_requests:25 - Request: GET /metrics
+2024-09-23 11:15:57.693 | INFO     | main:log_requests:27 - Response status: 200
